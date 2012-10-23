@@ -1,0 +1,167 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<!--
+P(a)=(on,off)=(0.500,0.500), sum=1.000
+P(b)=(on,off)=(0.450,0.550), sum=1.000
+P(c)=(on,off)=(0.450,0.550), sum=1.000
+P(d)=(on,off)=(0.680,0.320), sum=1.000
+P(e)=(on,off)=(0.465,0.535), sum=1.000
+P(f)=(on,off)=(0.176,0.824), sum=1.000
+P(g)=(on,off)=(0.415,0.585), sum=1.000
+P(h)=(on,off)=(0.823,0.177), sum=1.000
+-->
+
+<ANALYSISNOTEBOOK NAME="Notebook.Example-Example_from_Inference_in_Belief_Networks:_A_Procedual_Guide_by_Huang_and_Darwiche_1994" ROOT="ABCDEFGH">
+   <BNMODEL NAME="ABCDEFGH">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Microsoft Research DTAS"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="a" TYPE="discrete" XPOS="12000" YPOS="16000">
+            <DESCRIPTION>(a)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="b" TYPE="discrete" XPOS="10000" YPOS="14000">
+            <DESCRIPTION>(b)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="c" TYPE="discrete" XPOS="14000" YPOS="14000">
+            <DESCRIPTION>(c)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="d" TYPE="discrete" XPOS="10000" YPOS="12000">
+            <DESCRIPTION>(d)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="e" TYPE="discrete" XPOS="14000" YPOS="12000">
+            <DESCRIPTION>(e)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="f" TYPE="discrete" XPOS="12000" YPOS="10000">
+            <DESCRIPTION>(f)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="g" TYPE="discrete" XPOS="16000" YPOS="14000">
+            <DESCRIPTION>(g)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+         <VAR NAME="h" TYPE="discrete" XPOS="16000" YPOS="12000">
+            <DESCRIPTION>(h)</DESCRIPTION>
+            <STATENAME>on</STATENAME>
+            <STATENAME>off</STATENAME>
+         </VAR>
+      </VARIABLES>
+      <STRUCTURE>
+         <ARC PARENT="a" CHILD="b"/>
+         <ARC PARENT="a" CHILD="c"/>
+         <ARC PARENT="b" CHILD="d"/>
+         <ARC PARENT="c" CHILD="e"/>
+         <ARC PARENT="c" CHILD="g"/>
+         <ARC PARENT="d" CHILD="f"/>
+         <ARC PARENT="e" CHILD="f"/>
+         <ARC PARENT="e" CHILD="h"/>
+         <ARC PARENT="g" CHILD="h"/>
+      </STRUCTURE>
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="a"/>
+            <DPIS>
+               <DPI> 0.5 0.5</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="a"/>
+            </CONDSET>
+            <PRIVATE NAME="b"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.5 0.5</DPI>
+               <DPI INDEXES=" 1 "> 0.4 0.6</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="a"/>
+            </CONDSET>
+            <PRIVATE NAME="c"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.7 0.3</DPI>
+               <DPI INDEXES=" 1 "> 0.2 0.8</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="b"/>
+            </CONDSET>
+            <PRIVATE NAME="d"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.9 0.1</DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="c"/>
+            </CONDSET>
+            <PRIVATE NAME="e"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.3 0.7</DPI>
+               <DPI INDEXES=" 1 "> 0.6 0.4</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="d"/>
+               <CONDELEM NAME="e"/>
+            </CONDSET>
+            <PRIVATE NAME="f"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 0.01 0.99</DPI>
+               <DPI INDEXES=" 0 1 "> 0.01 0.99</DPI>
+               <DPI INDEXES=" 1 0 "> 0.01 0.99</DPI>
+               <DPI INDEXES=" 1 1 "> 0.99 0.01</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="c"/>
+            </CONDSET>
+            <PRIVATE NAME="g"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.8 0.2</DPI>
+               <DPI INDEXES=" 1 "> 0.1 0.9</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="e"/>
+               <CONDELEM NAME="g"/>
+            </CONDSET>
+            <PRIVATE NAME="h"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 0.05 0.95</DPI>
+               <DPI INDEXES=" 0 1 "> 0.95 0.05</DPI>
+               <DPI INDEXES=" 1 0 "> 0.95 0.05</DPI>
+               <DPI INDEXES=" 1 1 "> 0.95 0.05</DPI>
+            </DPIS>
+         </DIST>
+
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

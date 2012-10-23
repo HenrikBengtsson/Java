@@ -1,0 +1,64 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.StudFarm-Example_from_An_Introduction_to_Baysian_Networks_by_Finn_V._Jensen" ROOT="IcyRoads">
+   <BNMODEL NAME="IcyRoads">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="Watson" TYPE="discrete" XPOS="340" YPOS="0">
+            <DESCRIPTION>Watson</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="Holmes" TYPE="discrete" XPOS="0" YPOS="10">
+            <DESCRIPTION>Holmes</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="Icy" TYPE="discrete" XPOS="170" YPOS="110">
+            <DESCRIPTION>Icy</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="Icy" CHILD="Watson"/>
+         <ARC PARENT="Icy" CHILD="Holmes"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Icy"/>
+            <DPIS>
+               <DPI> 0.7 0.3</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Icy"/>
+            </CONDSET>
+            <PRIVATE NAME="Holmes"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.8 0.2</DPI>
+               <DPI INDEXES=" 1 "> 0.1 0.9</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Icy"/>
+            </CONDSET>
+            <PRIVATE NAME="Watson"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.8 0.2</DPI>
+               <DPI INDEXES=" 1 "> 0.1 0.9</DPI>
+            </DPIS>
+         </DIST>
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

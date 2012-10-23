@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Year2000</ECHO>
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="Year2000.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">Year2000</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Year2000.tex" WHAT="Moralized" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000Moralized</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Year2000.tex" WHAT="Triangulated" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000Triangulated</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Year2000.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000JoinTree</PARAMETER>
+ </SAVE>
+
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000Priori</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+ <DISPLAY VAR="*"/>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Electricity" STATENAME="Reduced"/>
+ <OBSERVE VAR="Telecom" STATENAME="Reduced"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000ElectricityTelecom</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO> Scenario I                                        </ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Electricity" STATENAME="Working"/>
+ <OBSERVE VAR="Telecom" STATENAME="Working"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000ScenarioI</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO> Scenario II                                       </ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Electricity" STATENAME="Reduced"/>
+ <OBSERVE VAR="Telecom" STATENAME="Not Working"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000ScenarioII</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO> Scenario III                                      </ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Electricity" STATENAME="Not Working"/>
+ <OBSERVE VAR="Telecom" STATENAME="Not Working"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Year2000.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">Year2000ScenarioIII</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+</XBNSCRIPT>

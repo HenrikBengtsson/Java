@@ -1,0 +1,97 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.FamilyOut" ROOT="FamilyOut">
+   <BNMODEL NAME="FamilyOut">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="F-out" TYPE="discrete" XPOS="0" YPOS="70">
+            <DESCRIPTION>Family out</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="L-on" TYPE="discrete" XPOS="120" YPOS="140">
+            <DESCRIPTION>Light on</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="D-out" TYPE="discrete" XPOS="190" YPOS="70">
+            <DESCRIPTION>Dog out</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="H-bark" TYPE="discrete" XPOS="350" YPOS="70">
+            <DESCRIPTION>Hear something barking</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="BP" TYPE="discrete" XPOS="70" YPOS="0">
+            <DESCRIPTION>Bowel problem</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="F-out" CHILD="L-on"/>
+         <ARC PARENT="F-out" CHILD="D-out"/>
+         <ARC PARENT="BP" CHILD="D-out"/>
+         <ARC PARENT="D-out" CHILD="H-bark"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="F-out"/>
+            <DPIS>
+               <DPI> 0.2 0.8</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="BP"/>
+            <DPIS>
+               <DPI> 0.05 0.95</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="BP"/>
+               <CONDELEM NAME="F-out"/>
+            </CONDSET>
+            <PRIVATE NAME="D-out"/>
+            <DPIS>
+               <DPI INDEXES="0 0"> 0.994 0.006</DPI>
+               <DPI INDEXES="0 1"> 0.96  0.04 </DPI>
+               <DPI INDEXES="1 0"> 0.88  0.12 </DPI>
+               <DPI INDEXES="1 1"> 0.2   0.8  </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="D-out"/>
+            </CONDSET>
+            <PRIVATE NAME="H-bark"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.9 0.1</DPI>
+               <DPI INDEXES=" 1 "> 0.1 0.9</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="F-out"/>
+            </CONDSET>
+            <PRIVATE NAME="L-on"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.99 0.01</DPI>
+               <DPI INDEXES=" 1 "> 0.1  0.9 </DPI>
+            </DPIS>
+         </DIST>
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

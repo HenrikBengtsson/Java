@@ -1,0 +1,180 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.FiringSquad" ROOT="FiringSquad">
+   <BNMODEL NAME="FiringSquad">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="CourtOrder" TYPE="discrete" XPOS="400" YPOS="400">
+            <DESCRIPTION>Court order</DESCRIPTION>
+            <STATENAME>Execution</STATENAME>
+            <STATENAME>No Execution</STATENAME>
+         </VAR>
+         <VAR NAME="Captain" TYPE="discrete" XPOS="200" YPOS="300">
+            <DESCRIPTION>Captain</DESCRIPTION>
+            <STATENAME>Signal</STATENAME>
+            <STATENAME>No Signal</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanA" TYPE="discrete" XPOS="100" YPOS="200">
+            <DESCRIPTION>Rifleman A</DESCRIPTION>
+            <STATENAME>Fire</STATENAME>
+            <STATENAME>Don't Fire</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanB" TYPE="discrete" XPOS="300" YPOS="200">
+            <DESCRIPTION>Rifleman B</DESCRIPTION>
+            <STATENAME>Fire</STATENAME>
+            <STATENAME>Don't Fire</STATENAME>
+         </VAR>
+         <VAR NAME="Prisoner" TYPE="discrete" XPOS="200" YPOS="100">
+            <DESCRIPTION>Death</DESCRIPTION>
+            <STATENAME>Dead</STATENAME>
+            <STATENAME>Alive</STATENAME>
+         </VAR>
+
+         <VAR NAME="Finger" TYPE="discrete" XPOS="20" YPOS="280">
+            <DESCRIPTION>Rifleman A:s nervous finger</DESCRIPTION>
+            <STATENAME>Nervous</STATENAME>
+            <STATENAME>Not Nervous</STATENAME>
+         </VAR>
+
+         <VAR NAME="Captain-x" TYPE="discrete" XPOS="600" YPOS="300">
+            <DESCRIPTION>Captain</DESCRIPTION>
+            <STATENAME>Signal</STATENAME>
+            <STATENAME>No Signal</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanA-x" TYPE="discrete" XPOS="500" YPOS="200">
+            <DESCRIPTION>Rifleman A</DESCRIPTION>
+            <STATENAME>Fire</STATENAME>
+            <STATENAME>Don't Fire</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanB-x" TYPE="discrete" XPOS="700" YPOS="200">
+            <DESCRIPTION>Rifleman B</DESCRIPTION>
+            <STATENAME>Fire</STATENAME>
+            <STATENAME>Don't Fire</STATENAME>
+         </VAR>
+         <VAR NAME="Prisoner-x" TYPE="discrete" XPOS="600" YPOS="100">
+            <DESCRIPTION>Death</DESCRIPTION>
+            <STATENAME>Dead</STATENAME>
+            <STATENAME>Alive</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="RiflemanA"  CHILD="Prisoner"/>
+         <ARC PARENT="RiflemanB"  CHILD="Prisoner"/>
+         <ARC PARENT="Captain"  CHILD="RiflemanA"/>
+         <ARC PARENT="Finger"  CHILD="RiflemanA"/>
+         <ARC PARENT="Captain"  CHILD="RiflemanB"/>
+         <ARC PARENT="CourtOrder"  CHILD="Captain"/>
+         <ARC PARENT="RiflemanA-x" CHILD="Prisoner-x"/>
+         <ARC PARENT="RiflemanB-x" CHILD="Prisoner-x"/>
+         <ARC PARENT="Captain-x" CHILD="RiflemanB-x"/>
+         <ARC PARENT="CourtOrder"  CHILD="Captain-x"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="CourtOrder"/>
+            <DPIS>
+               <DPI> 0.5 0.5</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Finger"/>
+            <DPIS>
+               <DPI> 0.1 0.9</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="CourtOrder"/>
+            </CONDSET>
+            <PRIVATE NAME="Captain"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Captain"/>
+               <CONDELEM NAME="Finger"/>
+            </CONDSET>
+            <PRIVATE NAME="RiflemanA"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 0 1 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Captain"/>
+            </CONDSET>
+            <PRIVATE NAME="RiflemanB"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="RiflemanA"/>
+               <CONDELEM NAME="RiflemanB"/>
+            </CONDSET>
+            <PRIVATE NAME="Prisoner"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 0 1 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="CourtOrder"/>
+            </CONDSET>
+            <PRIVATE NAME="Captain-x"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Captain-x"/>
+            </CONDSET>
+            <PRIVATE NAME="RiflemanB-x"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="RiflemanA-x"/>
+               <CONDELEM NAME="RiflemanB-x"/>
+            </CONDSET>
+            <PRIVATE NAME="Prisoner-x"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 0 1 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

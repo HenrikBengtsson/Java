@@ -1,0 +1,250 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.Year2000" ROOT="Year2000">
+   <BNMODEL NAME="Year2000">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+
+         <VAR NAME="Electricity" TYPE="discrete" XPOS="130" YPOS="180">
+            <DESCRIPTION>Electricity</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Reduced</STATENAME>
+            <STATENAME>Not Working</STATENAME>
+         </VAR>
+         <VAR NAME="Telecom" TYPE="discrete" XPOS="280" YPOS="180">
+            <DESCRIPTION>Telecom</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Reduced</STATENAME>
+            <STATENAME>Not Working</STATENAME>
+         </VAR>
+         <VAR NAME="Air_Travel" TYPE="discrete" XPOS="170" YPOS="90">
+            <DESCRIPTION>Air Travel</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Reduced</STATENAME>
+            <STATENAME>Not Working</STATENAME>
+         </VAR>
+         <VAR NAME="Rail" TYPE="discrete" XPOS="90" YPOS="90">
+            <DESCRIPTION>Rail</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Reduced</STATENAME>
+            <STATENAME>Not Working</STATENAME>
+         </VAR>
+         <VAR NAME="US_Banks" TYPE="discrete" XPOS="320" YPOS="90">
+            <DESCRIPTION>US Banks</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Reduced</STATENAME>
+            <STATENAME>Not Working</STATENAME>
+         </VAR>
+         <VAR NAME="US_Stocks" TYPE="discrete" XPOS="280" YPOS="0">
+            <DESCRIPTION>US Stocks</DESCRIPTION>
+            <STATENAME>Up</STATENAME>
+            <STATENAME>Down</STATENAME>
+            <STATENAME>Crash</STATENAME>
+         </VAR>
+         <VAR NAME="Utilities" TYPE="discrete" XPOS="240" YPOS="90">
+            <DESCRIPTION>Utilities</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Moderate</STATENAME>
+            <STATENAME>Severe</STATENAME>
+            <STATENAME>Failure</STATENAME>
+         </VAR>
+         <VAR NAME="Transportation" TYPE="discrete" XPOS="130" YPOS="0">
+            <DESCRIPTION>Transportation</DESCRIPTION>
+            <STATENAME>Working</STATENAME>
+            <STATENAME>Moderate</STATENAME>
+            <STATENAME>Severe</STATENAME>
+            <STATENAME>Failure</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="Electricity" CHILD="Telecom"/>
+         <ARC PARENT="Electricity" CHILD="Air_Travel"/>
+         <ARC PARENT="Electricity" CHILD="Rail"/>
+         <ARC PARENT="Telecom" CHILD="US_Banks"/>
+         <ARC PARENT="US_Banks" CHILD="US_Stocks"/>
+         <ARC PARENT="Utilities" CHILD="US_Stocks"/>
+         <ARC PARENT="Transportation" CHILD="US_Stocks"/>
+         <ARC PARENT="Electricity" CHILD="Utilities"/>
+         <ARC PARENT="Telecom" CHILD="Utilities"/>
+         <ARC PARENT="Rail" CHILD="Transportation"/>
+         <ARC PARENT="Air_Travel" CHILD="Transportation"/>
+      </STRUCTURE>
+
+
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Electricity"/>
+            <DPIS>
+               <DPI>0.6 0.3 0.1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Electricity"/>
+            </CONDSET>
+            <PRIVATE NAME="Telecom"/>
+            <DPIS>
+               <DPI INDEXES="0">0.8  0.15 0.05</DPI>
+               <DPI INDEXES="1">0.6  0.3  0.1 </DPI>
+               <DPI INDEXES="2">0.1  0.3  0.6 </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Electricity"/>
+            </CONDSET>
+            <PRIVATE NAME="Air_Travel"/>
+            <DPIS>
+               <DPI INDEXES="0">0.6  0.3  0.1 </DPI>
+               <DPI INDEXES="1">0.3  0.4  0.3 </DPI>
+               <DPI INDEXES="2">0.0  0.3  0.7 </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Electricity"/>
+            </CONDSET>
+            <PRIVATE NAME="Rail"/>
+            <DPIS>
+               <DPI INDEXES="0">0.7  0.2  0.1 </DPI>
+               <DPI INDEXES="1">0.5  0.3  0.2 </DPI>
+               <DPI INDEXES="2">0.1  0.2  0.7 </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Telecom"/>
+            </CONDSET>
+            <PRIVATE NAME="US_Banks"/>
+            <DPIS>
+               <DPI INDEXES="0">0.7  0.2  0.1 </DPI>
+               <DPI INDEXES="1">0.5  0.3  0.2 </DPI>
+               <DPI INDEXES="2">0.1  0.3  0.6 </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="US_Banks"/>
+               <CONDELEM NAME="Utilities"/>
+               <CONDELEM NAME="Transportation"/>
+            </CONDSET>
+            <PRIVATE NAME="US_Stocks"/>
+            <DPIS>
+               <DPI INDEXES="0 0 0">1    0    0   </DPI>
+               <DPI INDEXES="0 0 1">0.8  0.2  0   </DPI>
+               <DPI INDEXES="0 0 2">0.5  0.5  0   </DPI>
+               <DPI INDEXES="0 0 3">0.1  0.9  0   </DPI>
+
+               <DPI INDEXES="0 1 0">0.8  0.2  0   </DPI>
+               <DPI INDEXES="0 1 1">0.5  0.5  0   </DPI>
+               <DPI INDEXES="0 1 2">0.1  0.9  0   </DPI>
+               <DPI INDEXES="0 1 3">0    0.8  0.2 </DPI>
+
+               <DPI INDEXES="0 2 0">0    1    0   </DPI>
+               <DPI INDEXES="0 2 1">0    0.99 0.01</DPI>
+               <DPI INDEXES="0 2 2">0    0.95 0.05</DPI>
+               <DPI INDEXES="0 2 3">0    0.9  0.1 </DPI>
+
+               <DPI INDEXES="0 3 0">0    0.9  0.1 </DPI>
+               <DPI INDEXES="0 3 1">0    0.85 0.15</DPI>
+               <DPI INDEXES="0 3 2">0    0.5  0.5 </DPI>
+               <DPI INDEXES="0 3 3">0    0.7  0.3 </DPI>
+
+               <DPI INDEXES="1 0 0">0    1    0   </DPI>
+               <DPI INDEXES="1 0 1">0    0.99 0.01</DPI>
+               <DPI INDEXES="1 0 2">0    0.9  0.1 </DPI>
+               <DPI INDEXES="1 0 3">0    0.85 0.15</DPI>
+
+               <DPI INDEXES="1 1 0">0    0.85 0.15</DPI>
+               <DPI INDEXES="1 1 1">0    0.8  0.2 </DPI>
+               <DPI INDEXES="1 1 2">0    0.75 0.25</DPI>
+               <DPI INDEXES="1 1 3">0    0.7  0.3 </DPI>
+
+               <DPI INDEXES="1 2 0">0    0.75 0.25</DPI>
+               <DPI INDEXES="1 2 1">0    0.7  0.3 </DPI>
+               <DPI INDEXES="1 2 2">0    0.6  0.4 </DPI>
+               <DPI INDEXES="1 2 3">0    0.5  0.5 </DPI>
+
+               <DPI INDEXES="1 3 0">0    0.7  0.3 </DPI>
+               <DPI INDEXES="1 3 1">0    0.65 0.35</DPI>
+               <DPI INDEXES="1 3 2">0    0.6  0.4 </DPI>
+               <DPI INDEXES="1 3 3">0    0.5  0.5 </DPI>
+
+               <DPI INDEXES="2 0 0">0    0.6  0.4 </DPI>
+               <DPI INDEXES="2 0 1">0    0.5  0.5 </DPI>
+               <DPI INDEXES="2 0 2">0    0.4  0.6 </DPI>
+               <DPI INDEXES="2 0 3">0    0.3  0.7 </DPI>
+
+               <DPI INDEXES="2 1 0">0    0.5  0.5 </DPI>
+               <DPI INDEXES="2 1 1">0    0.4  0.6 </DPI>
+               <DPI INDEXES="2 1 2">0    0.3  0.7 </DPI>
+               <DPI INDEXES="2 1 3">0    0.2  0.8 </DPI>
+
+               <DPI INDEXES="2 2 0">0    0.4  0.6 </DPI>
+               <DPI INDEXES="2 2 1">0    0.3  0.7 </DPI>
+               <DPI INDEXES="2 2 2">0    0.2  0.8 </DPI>
+               <DPI INDEXES="2 2 3">0    0.1  0.9 </DPI>
+
+               <DPI INDEXES="2 3 0">0    0.3  0.7 </DPI>
+               <DPI INDEXES="2 3 1">0    0.2  0.8 </DPI>
+               <DPI INDEXES="2 3 2">0    0.1  0.9 </DPI>
+               <DPI INDEXES="2 3 3">0    0    1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Telecom"/>
+               <CONDELEM NAME="Electricity"/>
+            </CONDSET>
+            <PRIVATE NAME="Utilities"/>
+            <DPIS>
+               <DPI INDEXES="0 0">1    0    0    0   </DPI>
+               <DPI INDEXES="0 1">0.7  0.3  0    0   </DPI>
+               <DPI INDEXES="0 2">0    0.6  0.35 0.05</DPI>
+
+               <DPI INDEXES="1 0">0.7  0.2  0.1  0   </DPI>
+               <DPI INDEXES="1 1">0.4  0.3  0.2  0.1 </DPI>
+               <DPI INDEXES="1 2">0    0.3  0.5  0.2 </DPI>
+
+               <DPI INDEXES="2 0">0    0.4  0.5  0.1 </DPI>
+               <DPI INDEXES="2 1">0    0    0.4  0.6 </DPI>
+               <DPI INDEXES="2 2">0    0    0    1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Rail"/>
+               <CONDELEM NAME="Air_Travel"/>
+            </CONDSET>
+            <PRIVATE NAME="Transportation"/>
+            <DPIS>
+               <DPI INDEXES="0 0">1    0    0    0   </DPI>
+               <DPI INDEXES="0 1">0.7  0.3  0    0   </DPI>
+               <DPI INDEXES="0 2">0.5  0.3  0.2  0   </DPI>
+
+               <DPI INDEXES="1 0">0.7  0.2  0.1  0   </DPI>
+               <DPI INDEXES="1 1">0.5  0.3  0.2  0   </DPI>
+               <DPI INDEXES="1 2">0.4  0.3  0.2  0.1 </DPI>
+
+               <DPI INDEXES="2 0">0.5  0.2  0.3  0   </DPI>
+               <DPI INDEXES="2 1">0.4  0.2  0.3  0.1 </DPI>
+               <DPI INDEXES="2 2">0    0    0.1  0.9 </DPI>
+            </DPIS>
+         </DIST>
+
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

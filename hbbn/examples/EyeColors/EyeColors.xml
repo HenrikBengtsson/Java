@@ -1,0 +1,71 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.EyeColors" ROOT="EyeColors">
+   <BNMODEL NAME="EyeColors">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="Mother" TYPE="discrete" XPOS="100" YPOS="100">
+            <DESCRIPTION>Mother</DESCRIPTION>
+            <STATENAME>bb</STATENAME>
+            <STATENAME>bB</STATENAME>
+            <STATENAME>BB</STATENAME>
+         </VAR>
+         <VAR NAME="Father" TYPE="discrete" XPOS="300" YPOS="100">
+            <DESCRIPTION>Father</DESCRIPTION>
+            <STATENAME>bb</STATENAME>
+            <STATENAME>bB</STATENAME>
+            <STATENAME>BB</STATENAME>
+         </VAR>
+         <VAR NAME="Child" TYPE="discrete" XPOS="200" YPOS="0">
+            <DESCRIPTION>Child</DESCRIPTION>
+            <STATENAME>bb</STATENAME>
+            <STATENAME>bB</STATENAME>
+            <STATENAME>BB</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="Mother" CHILD="Child"/>
+         <ARC PARENT="Father" CHILD="Child"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Mother"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Father"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Mother"/>
+               <CONDELEM NAME="Father"/>
+            </CONDSET>
+            <PRIVATE NAME="Child"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

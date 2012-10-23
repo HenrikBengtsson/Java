@@ -1,0 +1,101 @@
+lafleur{hb}: java Simulator -n 1000 -f sim.dat -debug -optimize memory PedigreeCousins.xbn
+Simulate...
+ Timer started at 965736498.97s
+ Simulate 1000 instances of the BN with 28 variables.
+   Simulation #100 finished after 17.24s. Current speed is 5.85 simulations/s
+   Simulation #200 finished after 34.68s. Current speed is 5.73 simulations/s
+   Simulation #300 finished after 51.89s. Current speed is 5.81 simulations/s
+   Simulation #400 finished after 69.09s. Current speed is 5.81 simulations/s
+   Simulation #500 finished after 86.29s. Current speed is 5.81 simulations/s
+   Simulation #600 finished after 103.66s. Current speed is 5.76 simulations/s
+   Simulation #700 finished after 120.83s. Current speed is 5.82 simulations/s
+   Simulation #800 finished after 140.67s. Current speed is 5.04 simulations/s
+   Simulation #900 finished after 159.30s. Current speed is 5.37 simulations/s
+   Simulation #1000 finished after 176.64s. Average speed was 5.66 simulations/s   Number of message passed: 46092, i.e. 46.09 messages/sample.
+   Number of message passed: 23000, i.e. 23.00 messages/sample.
+ Simulate 1000 instances of the BN with 28 variables. finished!
+ Timer stopped at 965736675.61s after 176.65s
+Simulate... finished!
+Timer: 176.65s   
+
+
+lafleur{hb}: java Simulator -n 1000 -f sim2.dat -debug -optimize speed PedigreeCousins.xbn
+Simulate...
+ Timer started at 965737208.52s
+ Simulate 1000 instances of the BN with 28 variables.
+   Simulation #100 finished after 5.87s. Current speed is 17.62 simulations/s
+   Simulation #200 finished after 11.50s. Current speed is 17.73 simulations/s
+   Simulation #300 finished after 17.13s. Current speed is 17.78 simulations/s
+   Simulation #400 finished after 22.74s. Current speed is 17.82 simulations/s
+   Simulation #500 finished after 28.39s. Current speed is 17.72 simulations/s
+   Simulation #600 finished after 33.99s. Current speed is 17.85 simulations/s
+   Simulation #700 finished after 39.77s. Current speed is 17.30 simulations/s
+   Simulation #800 finished after 45.36s. Current speed is 17.89 simulations/s
+   Simulation #900 finished after 50.98s. Current speed is 17.78 simulations/s
+   Simulation #1000 finished after 56.56s. Average speed was 17.68 simulations/s   Number of message passed: 92, i.e. 0.09 messages/sample.
+   Number of message passed: 23000, i.e. 23.00 messages/sample.
+ Simulate 1000 instances of the BN with 28 variables. finished!
+ Timer stopped at 965737265.09s after 56.57s
+Simulate... finished!
+Timer: 56.57s 
+
+
+lafleur{hb}: java Simulator -n 1000 -f sim4.dat -debug -optimize memory -method
+two-pass PedigreeCousins.xbn
+Simulate using method 'two-pass' and optimizing for 'memory'
+Simulation method: TWO_PASS
+Simulate...
+ Timer started at 965740927.49s
+ Simulate 1000 instances of the BN with 28 variables.
+   Simulation #100 finished after 24.32s. Current speed is 4.14 simulations/s
+   Simulation #200 finished after 48.58s. Current speed is 4.12 simulations/s
+   Simulation #300 finished after 72.76s. Current speed is 4.13 simulations/s
+   Simulation #400 finished after 96.96s. Current speed is 4.13 simulations/s
+   Simulation #500 finished after 121.16s. Current speed is 4.13 simulations/s
+   Simulation #600 finished after 145.41s. Current speed is 4.12 simulations/s
+   Simulation #700 finished after 169.74s. Current speed is 4.11 simulations/s
+   Simulation #800 finished after 193.95s. Current speed is 4.13 simulations/s
+   Simulation #900 finished after 218.13s. Current speed is 4.14 simulations/s
+   Simulation #1000 finished after 242.49s. Average speed was 4.12 simulations/s   Number of message passed: 92092, i.e. 92.09 messages/sample.
+   Number of message passed: 0, i.e. 0.00 messages/sample.
+ Simulate 1000 instances of the BN with 28 variables. finished!
+ Timer stopped at 965741169.99s after 242.50s
+Simulate... finished!
+Timer: 242.50s    
+
+
+lafleur{hb}: java Simulator -n 1000 -f sim3.dat -debug -optimize speed -method two-pass PedigreeCousins.xbn
+Simulate using method 'two-pass' and optimizing for 'speed'
+Simulation method: TWO_PASS
+Simulate...
+ Timer started at 965740214.16s
+ Simulate 1000 instances of the BN with 28 variables.
+   Simulation #100 finished after 12.72s. Current speed is 7.99 simulations/s
+   Simulation #200 finished after 24.79s. Current speed is 8.28 simulations/s
+   Simulation #300 finished after 36.87s. Current speed is 8.28 simulations/s
+   Simulation #400 finished after 48.93s. Current speed is 8.29 simulations/s
+   Simulation #500 finished after 61.09s. Current speed is 8.22 simulations/s
+   Simulation #600 finished after 74.10s. Current speed is 7.68 simulations/s
+   Simulation #700 finished after 87.58s. Current speed is 7.42 simulations/s
+   Simulation #800 finished after 100.15s. Current speed is 7.96 simulations/s
+   Simulation #900 finished after 112.24s. Current speed is 8.27 simulations/s
+   Simulation #1000 finished after 124.48s. Average speed was 8.03 simulations/s   Number of message passed: 46092, i.e. 46.09 messages/sample.
+   Number of message passed: 0, i.e. 0.00 messages/sample.
+ Simulate 1000 instances of the BN with 28 variables. finished!
+ Timer stopped at 965740338.64s after 124.49s
+Simulate... finished!
+Timer: 124.49s     
+
+
+lafleur{hb}: java Simulator +append -n 1000 -f sim6.dat -debug -optimize speed -
+method unconditioned PedigreeCousins.xbn
+Simulate using method 'unconditioned' and optimizing for 'speed'
+Simulate...
+ Timer started at 965751905.03s
+   Simulation #1000 finished after 3320.90s. Average speed was 0.30 simulations/s
+   Number of message passed: 1334046, i.e. 1334.05 messages/sample.
+   Number of message passed: 0, i.e. 0.00 messages/sample.
+ Simulate 1000 instances of the BN with 28 variables. finished!
+ Timer stopped at 965755225.94s after 3320.91s
+Simulate... finished!
+Timer: 3320.91s

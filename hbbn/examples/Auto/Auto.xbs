@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Auto</ECHO>
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="Auto.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="Auto.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">Auto</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Auto.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoPriori</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Auto.tex" WHAT="Moralized" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoMoralized</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Auto.tex" WHAT="Triangulated" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoTriangulated</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="Auto.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoJoinTree</PARAMETER>
+ </SAVE>
+
+ <OBSERVE VAR="EngineStart" STATENAME="no"/>
+ <UPDATE/>
+
+ <DISPLAY VAR="*"/>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="ETO" STATENAME="yes"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Auto.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoE</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="SparkPlugs" STATENAME="good"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="Auto.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">AutoES</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+</XBNSCRIPT>

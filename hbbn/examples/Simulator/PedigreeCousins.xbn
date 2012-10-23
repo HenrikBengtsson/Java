@@ -1,0 +1,603 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="SibPairs" ROOT="Family">
+   <BNMODEL NAME="Family">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="1" TYPE="discrete" XPOS="300" YPOS="500">
+            <DESCRIPTION>1</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="1P" TYPE="discrete" XPOS="250" YPOS="550">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="2" TYPE="discrete" XPOS="500" YPOS="500">
+            <DESCRIPTION>2</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="2P" TYPE="discrete" XPOS="450" YPOS="550">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="3" TYPE="discrete" XPOS="100" YPOS="300">
+            <DESCRIPTION>3</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="3P" TYPE="discrete" XPOS="50" YPOS="350">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="4" TYPE="discrete" XPOS="300" YPOS="300">
+            <DESCRIPTION>4</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="4P" TYPE="discrete" XPOS="250" YPOS="350">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="5" TYPE="discrete" XPOS="500" YPOS="300">
+            <DESCRIPTION>5</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="5P" TYPE="discrete" XPOS="550" YPOS="350">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="6" TYPE="discrete" XPOS="900" YPOS="300">
+            <DESCRIPTION>6</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="6P" TYPE="discrete" XPOS="950" YPOS="350">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="7" TYPE="discrete" XPOS="200" YPOS="100">
+            <DESCRIPTION>7</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="7P" TYPE="discrete" XPOS="250" YPOS="50">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="8" TYPE="discrete" XPOS="500" YPOS="100">
+            <DESCRIPTION>8</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="8P" TYPE="discrete" XPOS="550" YPOS="50">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="9" TYPE="discrete" XPOS="700" YPOS="100">
+            <DESCRIPTION>9</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="9P" TYPE="discrete" XPOS="750" YPOS="50">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="10" TYPE="discrete" XPOS="900" YPOS="100">
+            <DESCRIPTION>10</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="10P" TYPE="discrete" XPOS="950" YPOS="50">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="11" TYPE="discrete" XPOS="700" YPOS="500">
+            <DESCRIPTION>11</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="11P" TYPE="discrete" XPOS="750" YPOS="550">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="12" TYPE="discrete" XPOS="900" YPOS="500">
+            <DESCRIPTION>12</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="12P" TYPE="discrete" XPOS="950" YPOS="550">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="13" TYPE="discrete" XPOS="500" YPOS="700">
+            <DESCRIPTION>13</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="13P" TYPE="discrete" XPOS="450" YPOS="750">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+
+         <VAR NAME="14" TYPE="discrete" XPOS="700" YPOS="700">
+            <DESCRIPTION>14</DESCRIPTION>
+            <STATENAME>dd</STATENAME>
+            <STATENAME>dD</STATENAME>
+            <STATENAME>DD</STATENAME>
+         </VAR>
+         <VAR NAME="14P" TYPE="discrete" XPOS="750" YPOS="750">
+            <DESCRIPTION>P</DESCRIPTION>
+            <STATENAME>Not affected</STATENAME>
+            <STATENAME>Affected</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="1" CHILD="4"/>
+         <ARC PARENT="1" CHILD="5"/>
+         <ARC PARENT="2" CHILD="4"/>
+         <ARC PARENT="2" CHILD="5"/>
+
+         <ARC PARENT="3" CHILD="7"/>
+         <ARC PARENT="4" CHILD="7"/>
+
+         <ARC PARENT="5" CHILD="8"/>
+         <ARC PARENT="5" CHILD="9"/>
+         <ARC PARENT="5" CHILD="10"/>
+         <ARC PARENT="6" CHILD="8"/>
+         <ARC PARENT="6" CHILD="9"/>
+         <ARC PARENT="6" CHILD="10"/>
+
+         <ARC PARENT="11" CHILD="6"/>
+         <ARC PARENT="12" CHILD="6"/>
+
+         <ARC PARENT="13" CHILD="2"/>
+         <ARC PARENT="13" CHILD="11"/>
+         <ARC PARENT="14" CHILD="2"/>
+         <ARC PARENT="14" CHILD="11"/>
+
+         <ARC PARENT="1" CHILD="1P"/>
+         <ARC PARENT="2" CHILD="2P"/>
+         <ARC PARENT="3" CHILD="3P"/>
+         <ARC PARENT="4" CHILD="4P"/>
+         <ARC PARENT="5" CHILD="5P"/>
+         <ARC PARENT="6" CHILD="6P"/>
+         <ARC PARENT="7" CHILD="7P"/>
+         <ARC PARENT="8" CHILD="8P"/>
+         <ARC PARENT="9" CHILD="9P"/>
+         <ARC PARENT="10" CHILD="10P"/>
+         <ARC PARENT="11" CHILD="11P"/>
+         <ARC PARENT="12" CHILD="12P"/>
+         <ARC PARENT="13" CHILD="13P"/>
+         <ARC PARENT="14" CHILD="14P"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="1"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="3"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="12"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="13"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="14"/>
+            <DPIS>
+               <DPI> 0.25 0.50 0.25</DPI>
+            </DPIS>
+         </DIST>
+
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="1"/>
+               <CONDELEM NAME="2"/>
+            </CONDSET>
+            <PRIVATE NAME="4"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="1"/>
+               <CONDELEM NAME="2"/>
+            </CONDSET>
+            <PRIVATE NAME="5"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="3"/>
+               <CONDELEM NAME="4"/>
+            </CONDSET>
+            <PRIVATE NAME="7"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="5"/>
+               <CONDELEM NAME="6"/>
+            </CONDSET>
+            <PRIVATE NAME="8"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="5"/>
+               <CONDELEM NAME="6"/>
+            </CONDSET>
+            <PRIVATE NAME="9"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="5"/>
+               <CONDELEM NAME="6"/>
+            </CONDSET>
+            <PRIVATE NAME="10"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="11"/>
+               <CONDELEM NAME="12"/>
+            </CONDSET>
+            <PRIVATE NAME="6"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="13"/>
+               <CONDELEM NAME="14"/>
+            </CONDSET>
+            <PRIVATE NAME="2"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="13"/>
+               <CONDELEM NAME="14"/>
+            </CONDSET>
+            <PRIVATE NAME="11"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1    0    0    </DPI>
+               <DPI INDEXES=" 0 1 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 0 2 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 1 0 "> 0.5  0.5  0    </DPI>
+               <DPI INDEXES=" 1 1 "> 0.25 0.5  0.25 </DPI>
+               <DPI INDEXES=" 1 2 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 0 "> 0    1    0    </DPI>
+               <DPI INDEXES=" 2 1 "> 0    0.5  0.5  </DPI>
+               <DPI INDEXES=" 2 2 "> 0    0    1    </DPI>
+            </DPIS>
+         </DIST>
+
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="1"/>
+            </CONDSET>
+            <PRIVATE NAME="1P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="2"/>
+            </CONDSET>
+            <PRIVATE NAME="2P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="3"/>
+            </CONDSET>
+            <PRIVATE NAME="3P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="4"/>
+            </CONDSET>
+            <PRIVATE NAME="4P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="5"/>
+            </CONDSET>
+            <PRIVATE NAME="5P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="6"/>
+            </CONDSET>
+            <PRIVATE NAME="6P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="7"/>
+            </CONDSET>
+            <PRIVATE NAME="7P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="8"/>
+            </CONDSET>
+            <PRIVATE NAME="8P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="9"/>
+            </CONDSET>
+            <PRIVATE NAME="9P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="10"/>
+            </CONDSET>
+            <PRIVATE NAME="10P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="11"/>
+            </CONDSET>
+            <PRIVATE NAME="11P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="12"/>
+            </CONDSET>
+            <PRIVATE NAME="12P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="13"/>
+            </CONDSET>
+            <PRIVATE NAME="13P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="14"/>
+            </CONDSET>
+            <PRIVATE NAME="14P"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1   0   </DPI>
+               <DPI INDEXES=" 1 "> 0.5 0.5 </DPI>
+               <DPI INDEXES=" 2 "> 0   1   </DPI>
+            </DPIS>
+         </DIST>
+
+
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

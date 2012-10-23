@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Eye Colors</ECHO>
+ <ECHO/>
+ <ECHO> This example was created by</ECHO>
+ <ECHO> Henrik Bengtsson, 1999</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="EyeColors.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="EyeColors.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">EyeColors</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="EyeColors.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">EyeColorsPriori</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="EyeColors.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">EyeColorsJoinTree</PARAMETER>
+ </SAVE>
+
+ <!-- Display the distribution for all variables -->
+ <DISPLAY VAR="*"/>
+
+ <!-- Observations -->
+ <ECHO>***************************************************</ECHO>
+ <ECHO>* "The information that the child has blue eyes</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Mother" STATENAME="BB"/>
+ <OBSERVE VAR="Father" STATENAME="bB"/>
+ <!-- Global propagation -->
+ <UPDATE/>
+ <DISPLAY VAR="*"/>
+ <SAVE FILENAME="EyeColors.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">EyeColorsMF</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+</XBNSCRIPT>

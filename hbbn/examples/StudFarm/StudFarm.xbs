@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Stud Farm
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO> "An Introduction to Bayesian Networks"</ECHO>
+ <ECHO> Finn V. Jensen, 1996</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="StudFarm.xml>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <!-- Display the distribution for all variables -->
+ <DISPLAY VAR="*"/>
+
+ <!-- Observations -->
+ <ECHO>***************************************************</ECHO>
+ <ECHO>* "The information that Watson has crashed</ECHO>
+ <ECHO>*  updates the probability that the roads are</ECHO>
+ <ECHO>*  icy and that Holmes also has crashed."</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Watson" STATENAME="yes"/>
+ <!-- Global propagation -->
+ <UPDATE/>
+ <DISPLAY VAR="Icy"/>
+ <DISPLAY VAR="Holmes"/>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO>* "At last, when Inspector is convinced that the</ECHO>
+ <ECHO>*  roads are not icy, then P(H|I=n)=(0.1,0.9)."</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Icy" STATENAME="no"/>
+ <!-- Global propagation -->
+ <UPDATE/>
+ <DISPLAY VAR="Holmes"/>
+
+
+ <!-- Remove all observations -->
+ <ECHO>********************************************</ECHO>
+ <ECHO>* Resetting network</ECHO>
+ <ECHO>********************************************</ECHO>
+ <RESET/>
+ <DISPLAY VAR="*"/>
+</XBNSCRIPT>

@@ -1,0 +1,204 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2000.3.15)  7 JUL 2000 10:47
+**report.tex
+(report.tex
+LaTeX2e <1999/12/01> patch level 1
+Babel <v3.6Z> and hyphenation patterns for american, french, german, ngerman, g
+reek, swedish, nohyphenation, loaded.
+(/usr/common4/teTeX/share/texmf/tex/latex/base/report.cls
+Document Class: report 1999/09/10 v1.4a Standard LaTeX document class
+(/usr/common4/teTeX/share/texmf.local/tex/latex/extsizes/size10.clo
+File: size10.clo 1996/10/31 v1.3u Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/matstat/hb/texmf/tex/generic/BayesianNetworks.sty
+Package: BayesianNetworks 2000/07/07 - Bayesian Networks by Henrik Bengtsson
+
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pst-tree.sty
+Package: pst-tree 1997/03/25 package wrapper for PSTricks pst-tree.tex
+
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pst-tree.tex
+ v97 patch 3, 1997/09/24
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pst-node.tex
+ v97 patch 9, 1999/04/14
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pstricks.tex
+`PSTricks' v97 patch 10  <1999/03/24> (tvz)
+\pst@dima=\dimen103
+\pst@dimb=\dimen104
+\pst@dimc=\dimen105
+\pst@dimd=\dimen106
+\pst@dimg=\dimen107
+\pst@dimh=\dimen108
+\pst@hbox=\box26
+\pst@boxg=\box27
+\pst@cnta=\count88
+\pst@cntb=\count89
+\pst@cntc=\count90
+\pst@cntd=\count91
+\pst@cntg=\count92
+\pst@cnth=\count93
+\pst@toks=\toks14
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen109
+\psxunit=\dimen110
+\psyunit=\dimen111
+\pslinewidth=\dimen112
+\pst@customdefs=\toks15
+\pslinearc=\dimen113
+\everypsbox=\toks16
+\psframesep=\dimen114
+\pslabelsep=\dimen115
+\theoverlaybox=\box28
+)
+\psrow=\count94
+\pscol=\count95
+\psmatrixcnt=\count96
+\psrowsep=\skip43
+\pscolsep=\skip44
+)
+\pstree@rootbox=\box29
+\pstree@box=\box30
+\psnodecnt=\count97
+\pstreelevel=\count98
+\pstreecnt=\count99
+\pstree@cnt=\count100
+\pstree@stop=\count101
+))
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pst-3d.sty
+Package: pst-3d 1997/03/25 package wrapper for PSTricks pst-3d.tex
+
+(/usr/common4/teTeX/share/texmf/tex/generic/pstricks/pst-3d.tex
+ v97, 1997/03/25)) (/usr/matstat/hb/texmf/tex/generic/BNTemplate.sty
+Package: BNTemplate 2000/01/03 Java BN to LaTeX by Henrik Bengtsson <hb@maths.l
+th.se>
+
+(/usr/common4/teTeX/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/matstat/hb/texmf/tex/generic/length.sty
+Package: length 1999/06/24 Packages to compare lengths by Henrik Bengtsson
+\length@tmp=\skip45
+\length@maxLength=\skip46
+)
+(/usr/common4/teTeX/share/texmf/tex/latex/tools/calc.sty
+Package: calc 1998/07/07 v4.1b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen116
+\calc@Bdimen=\dimen117
+\calc@Askip=\skip47
+\calc@Bskip=\skip48
+LaTeX Info: Redefining \setlength on input line 59.
+LaTeX Info: Redefining \addtolength on input line 60.
+\calc@denominator=\count104
+)
+(/usr/matstat/hb/texmf/tex/generic/hbfile.sty
+Package: hbfile 2000/05/22 - File handling by Henrik Bengtsson
+)
+\BN@width=\skip49
+\BN@height=\skip50
+\BN@length=\skip51
+\BN@lengthi=\skip52
+\BN@xpos=\skip53
+\BN@xmin=\skip54
+\BN@xmax=\skip55
+\BN@ypos=\skip56
+\BN@ymin=\skip57
+\BN@ymax=\skip58
+\BN@xposi=\skip59
+\BN@yposi=\skip60
+\BN@tmpiii=\skip61
+\BN@tmpiv=\skip62
+\c@BN@x=\count105
+\c@BN@y=\count106
+\c@BN@isObserved=\count107
+\c@BN@details=\count108
+\BN@tmpL=\skip63
+\BN@Graph@box=\box31
+)
+(/usr/matstat/hb/texmf/tex/generic/distribution.sty
+\distribution@maxLabelLength=\skip64
+\distribution@maxValueLength=\skip65
+\distribution@tmpL=\skip66
+\c@distribution@details=\count109
+\c@distribution@ypos=\count110
+\c@distribution@states=\count111
+\c@distribution@scanOnly=\count112
+\distribution@ready=\count113
+)
+(/usr/matstat/hb/texmf/tex/generic/GraphTemplate.sty
+Package: GraphTemplate 1999/08/18 Java BN to LaTeX by Henrik Bengtsson
+\Graph@tmpv=\skip67
+)
+(/usr/common4/teTeX/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 1999/09/10 v1.1b Standard LaTeX ifthen package (DPC)
+))
+(/usr/common4/teTeX/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/common4/teTeX/share/texmf.local/tex/latex/fontinst/tex/trig.sty
+Package: trig 1994/10/16 v1.08 sin cos tan (DPC)
+)
+(/usr/common4/teTeX/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/common4/teTeX/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (Year2000.tex)
+(report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+\openout10 = `dummy.tex'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+\openout10 = `dummy.tex'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+[1
+
+] [2] (report.aux) ) 
+Here is how much of TeX's memory you used:
+ 2186 strings out of 10889
+ 24868 string characters out of 71827
+ 103043 words of memory out of 263001
+ 5136 multiletter control sequences out of 10000+0
+ 6989 words of font info for 25 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 30i,10n,30p,312b,265s stack positions out of 300i,100n,500p,50000b,4000s
+
+Output written on report.dvi (2 pages, 18392 bytes).

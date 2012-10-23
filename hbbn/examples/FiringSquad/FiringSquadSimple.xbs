@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> The Firing Squad</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="FiringSquadSimple.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="FiringSquadSimple.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">FiringSquadSimple</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ 
+</XBNSCRIPT>

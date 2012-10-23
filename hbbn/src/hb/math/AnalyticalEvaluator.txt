@@ -1,0 +1,68 @@
+Terms:
+
+Operators:
+  AddOp         (+)
+  SubstractOp   (-)
+  MultiplyOp    (*)
+  DivideOp      (/)
+  AndOp         (&)
+  OrOp          (|)
+  XOrOp         (^)
+  ExponentOp    (exp)
+
+
+
+
+          + 
+        /   \
+       +     +
+      / \   / \
+     C   C C   C
+
+Stack:
+
+C C + C C + +
+
+eval(Stack):
+  obj = stack.read
+  if (obj == op)
+    op = stack.pop
+    op.process(stack)
+  else
+    return
+
+
+AddOp.evaluate(Stack):
+  obj = stack.pop
+  assert(obj != op)
+  const1 = obj
+  obj = stack.read
+  if (obj == op)
+    process(stack)
+  obj = stack.pop
+  assert(obj != op)
+  const2 = obj
+  result = const1+const2
+  stack.push(result)
+
+
+operator.process(Stack):
+  obj = stack.read
+  if (obj == op)
+    op = stack.pop
+    op.process(stack)
+  else
+    op.evaluate(stack)
+    return
+
+    
+op = +
++.process(C C + C C +)
+  op = +
+  +.process(C C + C C)
+    +.evaluate(C C + C C)
+      const1 = C
+      const2 = C
+      result = C+C
+      stack = C C + (C+C)
+

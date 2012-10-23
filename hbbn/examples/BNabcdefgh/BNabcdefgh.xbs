@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> BNabcdefgh</ECHO>
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="BNabcdefgh.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">BNabcdefgh</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">BNabcdefghPriori</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="Moralized" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">BNabcdefghMoralized</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="Triangulated" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">BNabcdefghTriangulated</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">BNabcdefghJoinTree</PARAMETER>
+ </SAVE>
+
+ <DISPLAY VAR="*"/>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="a" STATENAME="on"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="BNabcdefgh.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">BNabcdefghA</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+</XBNSCRIPT>

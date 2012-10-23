@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+<ANALYSISNOTEBOOK NAME="Notebook.auto.1" ROOT="auto.1">
+   <BNMODEL NAME="auto.1">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Microsoft Research DTAS"/>
+      </STATICPROPERTIES>
+      <DYNAMICPROPERTIES>
+         <PROPERTYTYPE NAME="MS_cost_fix" TYPE="real">
+            <COMMENT>cost to fix</COMMENT>
+         </PROPERTYTYPE>
+         <PROPERTYTYPE NAME="MS_cost_observe" TYPE="real">
+            <COMMENT>cost to observe</COMMENT>
+         </PROPERTYTYPE>
+         <PROPERTYTYPE NAME="MS_label" TYPE="enumeration"
+             ENUMSET="other informational problem fixunobs fixobs">
+            <COMMENT>Troubleshooting category</COMMENT>
+         </PROPERTYTYPE>
+         <PROPERTY NAME="MS_cost_fix">
+            <PROPVALUE>2000</PROPVALUE>
+         </PROPERTY>
+      </DYNAMICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="Alternator" TYPE="discrete" XPOS="15625" YPOS="10195">
+            <DESCRIPTION>Alternator</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>200</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>15</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="Battery" TYPE="discrete" XPOS="12805" YPOS="11335">
+            <DESCRIPTION>Battery</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>80</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixunobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="BatteryPower" TYPE="discrete" XPOS="13690" YPOS="12130">
+            <DESCRIPTION>Battery Power</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>low</STATENAME>
+            <STATENAME>none</STATENAME>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>other</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="CD" TYPE="discrete" XPOS="15940" YPOS="11155">
+            <DESCRIPTION>Charge Delivered</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+         </VAR>
+         <VAR NAME="CDLeak" TYPE="discrete" XPOS="17725" YPOS="10675">
+            <DESCRIPTION>CD Leak</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>450</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>50</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="Distributor" TYPE="discrete" XPOS="12610" YPOS="14290">
+            <DESCRIPTION>Distributor</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>80</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>15</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="ESLeak" TYPE="discrete" XPOS="16030" YPOS="16030">
+            <DESCRIPTION>EngineStart Leak</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>450</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>50</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="ETO" TYPE="discrete" XPOS="13510" YPOS="13630">
+            <DESCRIPTION>Engine Turn Over</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>1</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>informational</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="ETOLeak" TYPE="discrete" XPOS="15340" YPOS="13330">
+            <DESCRIPTION>ETO Leak</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>450</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>50</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="EngineStart" TYPE="discrete" XPOS="13720" YPOS="16135">
+            <DESCRIPTION>Engine Start</DESCRIPTION>
+            <STATENAME>yes</STATENAME>
+            <STATENAME>no</STATENAME>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>problem</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="FanBelt" TYPE="discrete" XPOS="16855" YPOS="10225">
+            <DESCRIPTION>Fan belt</DESCRIPTION>
+            <STATENAME>ok</STATENAME>
+            <STATENAME>loose</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>50</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>15</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="FuelLine" TYPE="discrete" XPOS="16360" YPOS="14500">
+            <DESCRIPTION>Fuel Line</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>100</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixunobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="FuelPump" TYPE="discrete" XPOS="16525" YPOS="15265">
+            <DESCRIPTION>Fuel Pump</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>100</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixunobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="Gas" TYPE="discrete" XPOS="17410" YPOS="12115">
+            <DESCRIPTION>Gas</DESCRIPTION>
+            <STATENAME>not empty</STATENAME>
+            <STATENAME>empty</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>15</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixunobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="GasGauge" TYPE="discrete" XPOS="15565" YPOS="12520">
+            <DESCRIPTION>Gas Gauge</DESCRIPTION>
+            <STATENAME>not empty</STATENAME>
+            <STATENAME>empty</STATENAME>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>1</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>informational</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="LightsShine" TYPE="discrete" XPOS="13495" YPOS="12985">
+            <DESCRIPTION>Lights</DESCRIPTION>
+            <STATENAME>work</STATENAME>
+            <STATENAME>don&apos;t work</STATENAME>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>1</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>informational</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="RadioPlays" TYPE="discrete" XPOS="12550" YPOS="12550">
+            <DESCRIPTION>Radio</DESCRIPTION>
+            <STATENAME>works</STATENAME>
+            <STATENAME>doesn&apos;t work</STATENAME>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>1</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>informational</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="SparkPlugs" TYPE="discrete" XPOS="11635" YPOS="14785">
+            <DESCRIPTION>Spark Plugs</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>80</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_cost_observe">
+               <PROPVALUE>15</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+         <VAR NAME="Starter" TYPE="discrete" XPOS="14695" YPOS="12805">
+            <DESCRIPTION>Starter</DESCRIPTION>
+            <STATENAME>good</STATENAME>
+            <STATENAME>bad</STATENAME>
+            <PROPERTY NAME="MS_cost_fix">
+               <PROPVALUE>200</PROPVALUE>
+            </PROPERTY>
+            <PROPERTY NAME="MS_label">
+               <PROPVALUE>fixunobs</PROPVALUE>
+            </PROPERTY>
+         </VAR>
+      </VARIABLES>
+      <STRUCTURE>
+         <ARC PARENT="Battery" CHILD="BatteryPower"/>
+         <ARC PARENT="CD" CHILD="BatteryPower"/>
+         <ARC PARENT="FanBelt" CHILD="CD"/>
+         <ARC PARENT="Alternator" CHILD="CD"/>
+         <ARC PARENT="CDLeak" CHILD="CD"/>
+         <ARC PARENT="BatteryPower" CHILD="ETO"/>
+         <ARC PARENT="Starter" CHILD="ETO"/>
+         <ARC PARENT="ETOLeak" CHILD="ETO"/>
+         <ARC PARENT="ETO" CHILD="EngineStart"/>
+         <ARC PARENT="Gas" CHILD="EngineStart"/>
+         <ARC PARENT="FuelPump" CHILD="EngineStart"/>
+         <ARC PARENT="ESLeak" CHILD="EngineStart"/>
+         <ARC PARENT="FuelLine" CHILD="EngineStart"/>
+         <ARC PARENT="Distributor" CHILD="EngineStart"/>
+         <ARC PARENT="SparkPlugs" CHILD="EngineStart"/>
+         <ARC PARENT="BatteryPower" CHILD="GasGauge"/>
+         <ARC PARENT="Gas" CHILD="GasGauge"/>
+         <ARC PARENT="BatteryPower" CHILD="LightsShine"/>
+         <ARC PARENT="BatteryPower" CHILD="RadioPlays"/>
+      </STRUCTURE>
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Alternator"/>
+            <DPIS>
+               <DPI> 0.99 0.01</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Battery"/>
+            <DPIS>
+               <DPI> 0.999 0.001</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="ci">
+            <CONDSET>
+               <CONDELEM NAME="Battery"/>
+               <CONDELEM NAME="CD"/>
+            </CONDSET>
+            <PRIVATE NAME="BatteryPower"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1 0 0</DPI>
+               <DPI INDEXES=" 1 0 "> 0 0.2 0.8</DPI>
+               <DPI INDEXES=" 0 1 "> 0.001 0.3 0.699</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="ci">
+            <CONDSET>
+               <CONDELEM NAME="FanBelt"/>
+               <CONDELEM NAME="Alternator"/>
+               <CONDELEM NAME="CDLeak"/>
+            </CONDSET>
+            <PRIVATE NAME="CD"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 0 "> 1 0</DPI>
+               <DPI INDEXES=" 1 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 1 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 0 1 "> 0 1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="CDLeak"/>
+            <DPIS>
+               <DPI> 0.999 0.001</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Distributor"/>
+            <DPIS>
+               <DPI> 0.99 0.01</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="ESLeak"/>
+            <DPIS>
+               <DPI> 0.999 0.001</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="ci">
+            <CONDSET>
+               <CONDELEM NAME="BatteryPower"/>
+               <CONDELEM NAME="Starter"/>
+               <CONDELEM NAME="ETOLeak"/>
+            </CONDSET>
+            <PRIVATE NAME="ETO"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 0 "> 1 0</DPI>
+               <DPI INDEXES=" 1 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 2 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 1 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 0 1 "> 0 1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="ETOLeak"/>
+            <DPIS>
+               <DPI> 0.999 0.001</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="ci">
+            <CONDSET>
+               <CONDELEM NAME="ETO"/>
+               <CONDELEM NAME="Gas"/>
+               <CONDELEM NAME="FuelPump"/>
+               <CONDELEM NAME="ESLeak"/>
+               <CONDELEM NAME="FuelLine"/>
+               <CONDELEM NAME="Distributor"/>
+               <CONDELEM NAME="SparkPlugs"/>
+            </CONDSET>
+            <PRIVATE NAME="EngineStart"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 0 0 0 0 0 "> 1 0</DPI>
+               <DPI INDEXES=" 1 0 0 0 0 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 1 0 0 0 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 0 1 0 0 0 0 "> 0.05 0.95</DPI>
+               <DPI INDEXES=" 0 0 0 1 0 0 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 0 0 0 1 0 0 "> 0.05 0.95</DPI>
+               <DPI INDEXES=" 0 0 0 0 0 1 0 "> 0.5 0.5</DPI>
+               <DPI INDEXES=" 0 0 0 0 0 0 1 "> 0.3 0.7</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="FanBelt"/>
+            <DPIS>
+               <DPI> 0.97 0.03</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="FuelLine"/>
+            <DPIS>
+               <DPI> 0.99 0.01</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="FuelPump"/>
+            <DPIS>
+               <DPI> 0.98 0.02</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Gas"/>
+            <DPIS>
+               <DPI> 0.999 0.001</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="ci">
+            <CONDSET>
+               <CONDELEM NAME="BatteryPower"/>
+               <CONDELEM NAME="Gas"/>
+            </CONDSET>
+            <PRIVATE NAME="GasGauge"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 0.999 0.001</DPI>
+               <DPI INDEXES=" 1 0 "> 1 0</DPI>
+               <DPI INDEXES=" 2 0 "> 0 1</DPI>
+               <DPI INDEXES=" 0 1 "> 0 1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="BatteryPower"/>
+            </CONDSET>
+            <PRIVATE NAME="LightsShine"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.999 0.001</DPI>
+               <DPI INDEXES=" 1 "> 0 1</DPI>
+               <DPI INDEXES=" 2 "> 0 1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="BatteryPower"/>
+            </CONDSET>
+            <PRIVATE NAME="RadioPlays"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 0.999 0.001</DPI>
+               <DPI INDEXES=" 1 "> 0.999 0.001</DPI>
+               <DPI INDEXES=" 2 "> 0 1</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="SparkPlugs"/>
+            <DPIS>
+               <DPI> 0.98 0.02</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="Starter"/>
+            <DPIS>
+               <DPI> 0.99 0.01</DPI>
+            </DPIS>
+         </DIST>
+
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

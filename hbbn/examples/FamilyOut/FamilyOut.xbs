@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Family out?</ECHO>
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO> "An Introduction to Bayesian Networks"</ECHO>
+ <ECHO> Finn V. Jensen, 1996</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="FamilyOut.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="FamilyOut.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">FamilyOut</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FamilyOut.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FamilyOutPriori</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FamilyOut.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FamilyOutJoinTree</PARAMETER>
+ </SAVE>
+
+ <DISPLAY VAR="*"/>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO> We observe that the light is on.</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="L-on" STATENAME="yes"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="FamilyOut.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FamilyOutL</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+ <ECHO> We observe that the dog has bowel problems.</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="BP" STATENAME="yes"/>
+ <UPDATE/><DISPLAY VAR="*"/>
+ <SAVE FILENAME="FamilyOut.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FamilyOutLB</PARAMETER>
+   <PARAMETER NAME="Details">2</PARAMETER>
+ </SAVE>
+
+ <ECHO>***************************************************</ECHO>
+</XBNSCRIPT>

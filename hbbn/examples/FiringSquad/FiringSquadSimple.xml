@@ -1,0 +1,102 @@
+<!DOCTYPE ANALYSISNOTEBOOK SYSTEM "xbn.dtd">
+
+<ANALYSISNOTEBOOK NAME="Notebook.FiringSquadSimple" ROOT="FiringSquadSimple">
+   <BNMODEL NAME="FiringSquadSimple">
+      <STATICPROPERTIES>
+         <FORMAT VALUE="MSR DTAS XML"/>
+         <VERSION VALUE="0.2"/>
+         <CREATOR VALUE="Henrik Bengtsson, hb@maths.lth.se"/>
+      </STATICPROPERTIES>
+      <VARIABLES>
+         <VAR NAME="CourtOrder" TYPE="discrete" XPOS="200" YPOS="400">
+            <DESCRIPTION>Court order</DESCRIPTION>
+            <STATENAME>Execution</STATENAME>
+            <STATENAME>No Execution</STATENAME>
+         </VAR>
+         <VAR NAME="Captain" TYPE="discrete" XPOS="200" YPOS="300">
+            <DESCRIPTION>Captain</DESCRIPTION>
+            <STATENAME>Signal</STATENAME>
+            <STATENAME>No Signal</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanA" TYPE="discrete" XPOS="100" YPOS="200">
+            <DESCRIPTION>Rifleman A</DESCRIPTION>
+            <STATENAME>Firing</STATENAME>
+            <STATENAME>No Firing</STATENAME>
+         </VAR>
+         <VAR NAME="RiflemanB" TYPE="discrete" XPOS="300" YPOS="200">
+            <DESCRIPTION>Rifleman B</DESCRIPTION>
+            <STATENAME>Firing</STATENAME>
+            <STATENAME>No Firing</STATENAME>
+         </VAR>
+         <VAR NAME="Prisoner" TYPE="discrete" XPOS="200" YPOS="100">
+            <DESCRIPTION>Prisoner</DESCRIPTION>
+            <STATENAME>Dead</STATENAME>
+            <STATENAME>Alive</STATENAME>
+         </VAR>
+      </VARIABLES>
+
+      <STRUCTURE>
+         <ARC PARENT="RiflemanA"  CHILD="Prisoner"/>
+         <ARC PARENT="RiflemanB"  CHILD="Prisoner"/>
+         <ARC PARENT="Captain"  CHILD="RiflemanA"/>
+         <ARC PARENT="Captain"  CHILD="RiflemanB"/>
+         <ARC PARENT="CourtOrder"  CHILD="Captain"/>
+      </STRUCTURE>
+
+      <DISTRIBUTIONS>
+         <DIST TYPE="discrete">
+            <PRIVATE NAME="CourtOrder"/>
+            <DPIS>
+               <DPI> 0.5 0.5</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="CourtOrder"/>
+            </CONDSET>
+            <PRIVATE NAME="Captain"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Captain"/>
+            </CONDSET>
+            <PRIVATE NAME="RiflemanA"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="Captain"/>
+            </CONDSET>
+            <PRIVATE NAME="RiflemanB"/>
+            <DPIS>
+               <DPI INDEXES=" 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+
+         <DIST TYPE="discrete">
+            <CONDSET>
+               <CONDELEM NAME="RiflemanA"/>
+               <CONDELEM NAME="RiflemanB"/>
+            </CONDSET>
+            <PRIVATE NAME="Prisoner"/>
+            <DPIS>
+               <DPI INDEXES=" 0 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 0 1 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 0 "> 1.0 0.0</DPI>
+               <DPI INDEXES=" 1 1 "> 0.0 1.0</DPI>
+            </DPIS>
+         </DIST>
+      </DISTRIBUTIONS>
+   </BNMODEL>
+</ANALYSISNOTEBOOK>

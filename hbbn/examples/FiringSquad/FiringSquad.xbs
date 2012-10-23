@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE XBNSCRIPT SYSTEM "xbnscript.dtd">
+
+<XBNSCRIPT>
+ <ECHO>********************************************</ECHO>
+ <ECHO> Icy Roads</ECHO>
+ <ECHO/>
+ <ECHO> This example is taken from</ECHO>
+ <ECHO> "An Introduction to Bayesian Networks"</ECHO>
+ <ECHO> Finn V. Jensen, 1996</ECHO>
+ <ECHO>********************************************</ECHO>
+ <ECHO>Loading network...</ECHO>
+ <LOAD FILENAME="FiringSquad.xml"/>
+ <ECHO>OK</ECHO>
+ <ECHO/>
+
+ <SAVE FILENAME="FiringSquad.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="CommandName">FiringSquad</PARAMETER>
+   <PARAMETER NAME="Details">0</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FiringSquad.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FiringSquadPriori</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FiringSquad.tex" WHAT="Moralized" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FiringSquadMoralized</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FiringSquad.tex" WHAT="Triangulated" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FiringSquadTriangulated</PARAMETER>
+ </SAVE>
+ <SAVE FILENAME="FiringSquad.tex" WHAT="JoinTree" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FiringSquadJoinTree</PARAMETER>
+ </SAVE>
+
+ <!-- Display the distribution for all variables -->
+ <DISPLAY VAR="*"/>
+
+ <!-- Observations -->
+ <ECHO>***************************************************</ECHO>
+ <ECHO>***************************************************</ECHO>
+ <OBSERVE VAR="Prisoner" STATENAME="Dead"/>
+ <OBSERVE VAR="RiflemanA-x" STATENAME="Don't Fire"/>
+ <!-- Global propagation -->
+ <UPDATE/>
+ <DISPLAY VAR="*"/>
+ <SAVE FILENAME="FiringSquad.tex" WHAT="BN" FORMAT="LaTeX">
+   <PARAMETER NAME="Append">yes</PARAMETER>
+   <PARAMETER NAME="CommandName">FiringSquadD</PARAMETER>
+   <PARAMETER NAME="Details">3</PARAMETER>
+ </SAVE>
+
+</XBNSCRIPT>
